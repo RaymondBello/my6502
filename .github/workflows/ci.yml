@@ -19,7 +19,6 @@ jobs:
         configuration:
           - Debug
           - Release
-          - Coverage
 
         include:
           - toolchain: linux-gcc
