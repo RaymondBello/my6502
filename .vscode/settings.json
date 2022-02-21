@@ -64,6 +64,7 @@
         "*.in": "cpp"
     },
     "cSpell.words": [
+        "IMGUI",
         "IRQB",
         "NMIB",
         "RESB",

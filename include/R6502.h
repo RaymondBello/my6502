@@ -58,17 +58,41 @@ public:
     // Link this CPU to a communications bus
     void ConnectBus(Bus *n) { bus = n; }
 
-    // The status register stores 8 flags 
+    // The status register stores 8 flags
     enum FLAGS6502
     {
-        C = (1 << 0), // Carry Bit
-        Z = (1 << 1), // Zero
-        I = (1 << 2), // Disable Interrupts
-        D = (1 << 3), // Decimal Mode (unused in this implementation)
-        B = (1 << 4), // Break
-        U = (1 << 5), // Unused
-        V = (1 << 6), // Overflow
-        N = (1 << 7), // Negative
+        /**
+         * @brief Carry Bit
+         */
+        C = (1 << 0),
+        /**
+         * @brief Zero
+         */
+        Z = (1 << 1),
+        /**
+         * @brief Disable Interrupts
+         */
+        I = (1 << 2),
+        /**
+         * @brief Decimal Mode (unused in this implementation)
+         */
+        D = (1 << 3),
+        /**
+         * @brief Break 
+         */
+        B = (1 << 4),
+        /**
+         * @brief Unused
+         */
+        U = (1 << 5),
+        /**
+         * @brief Overflow
+         */
+        V = (1 << 6),
+        /**
+         * @brief Negative
+         */
+        N = (1 << 7),
     };
 
     // 12 Addressing Modes. These functions

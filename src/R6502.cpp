@@ -256,7 +256,7 @@ void R6502::nmi()
 ///////////////////////////// ADDRESSING MODES //////////////////////////////
 
 /**
- * @brief IMP - Implied address mode
+ * @brief IMP - Implied address mode\n 
  * There is no additional data required for this instruction.  
  * 
  * @return uint8_t flag if an additional clock cycle is needed in this addressing mode
@@ -268,7 +268,7 @@ uint8_t R6502::IMP()
 }
 
 /**
- * @brief IMM - Immediate address mode
+ * @brief IMM - Immediate address mode\n
  * This instruction expects the next byte to be used as a value.
  * 
  * @return uint8_t flag if an additional clock cycle is needed in this addressing mode
@@ -280,7 +280,7 @@ uint8_t R6502::IMM()
 }
 
 /**
- * @brief ZP0 - Zero Page Address Mode
+ * @brief ZP0 - Zero Page Address Mode\n
  * To save program bytes, zero page addressing allows you to absolutely address
  * a location in first 0xFF bytes of address range.
  * 
@@ -295,7 +295,7 @@ uint8_t R6502::ZP0()
 }
 
 /**
- * @brief ZPX - Zero Page with X Offset Address Mode
+ * @brief ZPX - Zero Page with X Offset Address Mode\n
  * Fundamentally the same as Zero Page addressing, but the contents of the X Register
  * is added to the supplied single byte address.
  * 
@@ -310,7 +310,7 @@ uint8_t R6502::ZPX()
 }
 
 /**
- * @brief ZPY - Zero Page with Y Offset Address Mode
+ * @brief ZPY - Zero Page with Y Offset Address Mode\n
  * Same as above but uses Y Register for offset
  * 
  * @return uint8_t flag if an additional clock cycle is needed in this addressing mode
@@ -324,7 +324,7 @@ uint8_t R6502::ZPY()
 }
 
 /**
- * @brief REL - Relative address mode
+ * @brief REL - Relative address mode\n
  * This address mode is exclusive to branch instructions.
  * 
  * @return uint8_t flag if an additional clock cycle is needed in this addressing mode
@@ -339,7 +339,7 @@ uint8_t R6502::REL()
 }
 
 /**
- * @brief ABS - Absolute Address Mode
+ * @brief ABS - Absolute Address Mode\n
  * A full 16-bit address is loaded and used
  * 
  * @return uint8_t flag if an additional clock cycle is needed in this addressing mode
@@ -357,7 +357,7 @@ uint8_t R6502::ABS()
 }
 
 /**
- * @brief ABX - Absolute with X Offset Address Mode
+ * @brief ABX - Absolute with X Offset Address Mode\n
  * Fundamentally the same as absolute addressing, but the contents of the X Register is added to the supplied two byte address. 
  * If the resulting address changes the page, an additional clock cycle is required
  * 
@@ -380,7 +380,7 @@ uint8_t R6502::ABX()
 }
 
 /**
- * @brief ABY - Absolute with Y Offset Address Mode
+ * @brief ABY - Absolute with Y Offset Address Mode\n
  * Fundamentally the same as absolute addressing, but the contents of the Y Register is added to the supplied two byte address. 
  * If the resulting address changes the page, an additional clock cycle is required
  * 
@@ -403,7 +403,7 @@ uint8_t R6502::ABY()
 }
 
 /**
- * @brief IND - Indirect Address Mode
+ * @brief IND - Indirect Address Mode\n
  * The supplied 16-bit address is read to get the actual 16-bit address.
  * 
  * @return uint8_t flag if an additional clock cycle is needed in this addressing mode
@@ -430,7 +430,7 @@ uint8_t R6502::IND()
 }
 
 /**
- * @brief IZX - Indirect X Address Mode
+ * @brief IZX - Indirect X Address Mode\n
  * The supplied 8-bit address is offset by X Register to index
  * a location in page 0x00. The actual 16-bit address is read from this location
  * 
@@ -450,7 +450,7 @@ uint8_t R6502::IZX()
 }
 
 /**
- * @brief IZY - Indirect Y Address Mode
+ * @brief IZY - Indirect Y Address Mode\n
  * The supplied 8-bit address indexes a location in page 0x00. From
  * here the actual 16-bit address is read, and the contents of
  * Y Register is added to it to offset it. If the offset causes a
@@ -477,7 +477,7 @@ uint8_t R6502::IZY()
 
 /**
  * @brief This function sources the data used by the instruction into
- * a convenient numeric variable. 
+ * a convenient numeric variable.\n
  * Some instructions dont have to fetch data as the source is implied by the instruction.
  * 
  * @return uint8_t  the working input value to the ALU
@@ -492,8 +492,8 @@ uint8_t R6502::fetch()
 ///////////////////////////// INSTRUTION SET //////////////////////////////
 
 /**
- * @brief AND - Bitwise Logic AND
- * Function:    A = A & M
+ * @brief AND - Bitwise Logic AND\n
+ * Function:    A = A & M\n
  * Flags Out:   N, Z
  * 
  * @return uint8_t flag if instruction has potential to require 
@@ -509,8 +509,8 @@ uint8_t R6502::AND()
 }
 
 /**
- * @brief ASL - Arithmetic Shift Left
- * Function:    A = C <- (A << 1) <- 0
+ * @brief ASL - Arithmetic Shift Left\n
+ * Function:    A = C <- (A << 1) <- 0\n
  * Flags Out:   N, Z, C
  * 
  * @return uint8_t flag if additional cycle is needed
@@ -530,7 +530,7 @@ uint8_t R6502::ASL()
 }
 
 /**
- * @brief BCC - Branch if Carry Clear
+ * @brief BCC - Branch if Carry Clear\n
  * Function:    if(C == 0) pc = address
  * 
  * @return uint8_t flag if additional cycle is needed
@@ -551,7 +551,7 @@ uint8_t R6502::BCC()
 }
 
 /**
- * @brief Branch if Carry Set
+ * @brief Branch if Carry Set\n
  * Function:    if(C == 1) pc = address
  * 
  * @return uint8_t flag if additional cycle is needed
@@ -572,7 +572,7 @@ uint8_t R6502::BCS()
 }
 
 /**
- * @brief BEQ - Branch if Equal
+ * @brief BEQ - Branch if Equal\n
  * Function:    if(Z == 1) pc = address
  * 
  * @return uint8_t flag if additional cycle is needed
@@ -608,7 +608,7 @@ uint8_t R6502::BIT()
 }
 
 /**
- * @brief BMI -  Branch if Result Minus
+ * @brief BMI -  Branch if Result Minus\n
  * Function:    if(N == 1) pc = address
  * 
  * @return uint8_t flag if additional cycle is needed
@@ -628,7 +628,7 @@ uint8_t R6502::BMI()
     return 0;
 }
 
-// Instruction: Branch if Not Equal
+// Instruction: Branch if Not Equal\n
 // Function:    if(Z == 0) pc = address
 uint8_t R6502::BNE()
 {
@@ -645,7 +645,7 @@ uint8_t R6502::BNE()
     return 0;
 }
 
-// Instruction: Branch if Positive
+// Instruction: Branch if Positive\n
 // Function:    if(N == 0) pc = address
 uint8_t R6502::BPL()
 {
@@ -662,7 +662,7 @@ uint8_t R6502::BPL()
     return 0;
 }
 
-// Instruction: Break
+// Instruction: Break\n
 // Function:    Program Sourced Interrupt
 uint8_t R6502::BRK()
 {
@@ -1378,7 +1378,7 @@ std::map<uint16_t, std::string> R6502::disassemble(uint16_t nStart, uint16_t nSt
         addr++;
         sInst += lookup[opcode].name + " ";
 
-        // Get oprands from desired locations, and form the
+        // Get operands from desired locations, and form the
         // instruction based upon its addressing mode. These
         // routines mimmick the actual fetch routine of the
         // 6502 in order to get accurate data as part of the
