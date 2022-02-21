@@ -10,7 +10,9 @@ cmake_minimum_required(VERSION 3.14)
 # Set project name, version and languages here. (change as needed)
 # Version numbers are available by including "exampleConfig.h" in
 # the source. See exampleConfig.h.in for some more details.
-project(My6502 VERSION 1.0.0.0 LANGUAGES C CXX OBJC OBJCXX)
+project(My6502 VERSION 1.0.0.0 LANGUAGES C CXX )
+# project(My6502 VERSION 1.0.0.0 LANGUAGES C CXX OBJC OBJCXX)
+
 
 
 # Options: Things you can set via commandline options to cmake (e.g. -DENABLE_LTO=[ON|OFF])
