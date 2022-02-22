@@ -162,6 +162,7 @@ void R6502::reset()
 
     // set program counter
     pc = (hi << 8) | lo;
+    printf("Reset Requested. PC = %X\n", pc);
 
     // reset core registers
     a = 0;

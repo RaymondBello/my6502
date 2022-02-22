@@ -8,7 +8,7 @@
 
 // VECTOR LOCATIONS (https://eater.net/datasheets/w65c02s.pdf)[Table 3-1 Vector Locations]
 #define IRQB    0xFFFE  // Interupt Vector
-#define RESB    0xFFFF  // Reset Vector
+#define RESB    0xFFFC  // Reset Vector
 #define NMIB    0xFFFA  // Non-Maskable Interrupt
 
 // CPU DEFINITIONS
